@@ -1,0 +1,39 @@
+.category-wrapper {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+.category {
+  text-align: center;
+  padding: 20px 10px;
+  background: #fff;
+}
+
+.category-item {
+  width: 20%;
+  margin-bottom:  10px;
+}
+.category-item-img {
+  padding: 0 10px;
+  box-sizing: border-box;
+  width: 100%;
+}
+.index-container {
+  margin-top: 10px;
+}
+.index-container ul {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.index-container li {
+  list-style: none;
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  border-radius: 4px;
+  background-color: #ccc;
+  margin: 0 3px;
+}
+.index-container li.selected {
+  background-color: rgb(233, 32, 61);
+}

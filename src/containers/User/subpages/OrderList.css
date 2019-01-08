@@ -1,0 +1,10 @@
+.order-list-wrapper {
+  margin-top: 20px;
+  background: #fff;
+  padding: 0 15px;
+}
+.order-list-wrapper .order-list-title {
+  font-size: 16px;
+  height: 35px;
+  line-height: 35px;
+}

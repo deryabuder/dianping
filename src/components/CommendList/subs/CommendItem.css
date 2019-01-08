@@ -1,0 +1,47 @@
+.command-list-content {
+  padding: 0 10px;
+}
+.commend-item {
+  display: flex;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+  color: #666;
+}
+.commend-left-img {
+  width: 54px;
+}
+.commend-right {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 10px;
+}
+.commend-id {
+  font-size: 16px;
+  color: #000;
+}
+.commend-star {
+  padding: 5px 0;
+}
+.commend-star i {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: url('../../../static/img/star.png') no-repeat top left;
+  background-size: 12px 12px;
+}
+.commend-content {
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.commend-img-wrapper {
+  display: 1;
+  padding-top: 10px;
+}
+.commend-right-img {
+  width: 64px;
+  margin-right: 10px;
+}

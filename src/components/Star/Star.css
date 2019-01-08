@@ -1,0 +1,10 @@
+.star-container {
+  display: inline-block;
+}
+.star-container i {
+  color: #999;
+  margin: 0 2px;
+}
+.star-container .light {
+  color: rgb(233, 32, 61);
+}
