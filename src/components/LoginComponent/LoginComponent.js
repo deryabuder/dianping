@@ -21,7 +21,7 @@ class LoginComponent extends React.Component {
     return (
       <div className='login-form'>
         <div className='login-input-wrapper'>
-          <i>name:</i>
+          <i className='icon-phone'></i>
           <input 
             className='login-input' 
             type='text' 
@@ -30,7 +30,7 @@ class LoginComponent extends React.Component {
             placeholder='请输入手机号'/>
         </div>
         <div className='login-input-wrapper'>
-          <i>pwd:</i>
+          <i className='icon-key'></i>
           <input type='text' className='login-input login-pwd' placeholder='输入验证码'/>
           <span className='pwd-button fr'>发送验证码</span>
         </div>

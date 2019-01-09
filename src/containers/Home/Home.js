@@ -6,18 +6,10 @@ import { CITYNAME } from '../../config/localStoreKey'
 import * as userInfoActionsFromOtherFile from '../../actions/userinfo'
 import HomeHeader from '../../components/HomeHeader/HomeHeader'
 import Category from '../../components/Category/Category'
-import HomeAd from '../../components//HomeAd/HomeAd'
-import LikeList from '../../components//LikeList/LikeList'
+import Ad from './subpages/Ad'
+import List from './subpages/List'
 import './Home.css'
-import {homeAd, likeList} from '../../common/js/apiInterface'
 class Home extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      adArr: [],
-      likeArr: []
-    }
-  }
   componentDidMount () {
     // 每次刷新页面，从localStorage中取数据
     let cityName = localStore.getItem(CITYNAME)
@@ -27,26 +19,14 @@ class Home extends React.Component {
     this.props.userInfoActions.update({
       cityName: cityName
     })
-    homeAd().then(response => {
-      var res = response.data
-      if(res.status === '200') {
-        this.setState({adArr: res.result})
-      }
-    })
-    likeList().then(response => {
-      var res = response.data
-      if(res.status === '200') {
-        this.setState({likeArr: res.result.data})
-      }
-    })
   }
   render () {
     return (
       <div className='home-wrapper'>
         <HomeHeader cityName={this.props.userinfo.cityName} search={this.search.bind(this)}></HomeHeader>
         <Category></Category>
-        <HomeAd homeAd={this.state.adArr}></HomeAd>
-        <LikeList likeList={this.state.likeArr}></LikeList>
+        <Ad></Ad>
+        <List cityName={this.props.userinfo.cityName}></List>
       </div>
     )
   }

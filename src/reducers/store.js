@@ -10,7 +10,8 @@ export default function userinfo(state = initialState, action) {
       state.unshift(action.data)
       return state
     case actionTypes.STORE_RM:
-      return state.filter(item => {
+      // eslint-disable-next-line array-callback-return
+      return state.filter(function(item) {
         if (item.id !== action.data.id) {
           return item
         }

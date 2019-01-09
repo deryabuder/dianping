@@ -4,7 +4,7 @@
 }
 .category {
   text-align: center;
-  padding: 20px 10px;
+  padding: 20px 10px 10px;
   background: #fff;
 }
 
@@ -36,4 +36,9 @@
 }
 .index-container li.selected {
   background-color: rgb(233, 32, 61);
+}
+.icon-circle-right, .icon-circle-left {
+  color: #ccc;
+  font-size: 30px;
+  padding: 0 20px;
 }

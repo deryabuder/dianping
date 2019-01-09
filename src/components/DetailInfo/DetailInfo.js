@@ -16,17 +16,17 @@ class DetailInfo extends React.Component {
         </div>
         <div className='detail-des clearfix'>
           <div className='detail-des-left fl'>
-            <i></i>
+            <i className='icon-map-marker'></i>&nbsp;
             双井并街与南街交汇处
           </div>
-          <div className='detail-des-right fr'>》</div>
+          <div className='detail-des-right fr'><i className='icon-angle-right'></i></div>
         </div>
         <div className='detail-des clearfix'>
           <div className='detail-des-left fl'>
-            <i></i>
+            <i className='icon-phone'></i>&nbsp;
             40012123434
           </div>
-          <div className='detail-des-right fr'>》</div>
+          <div className='detail-des-right fr'><i className='icon-angle-right'></i></div>
         </div>
       </div>
     )

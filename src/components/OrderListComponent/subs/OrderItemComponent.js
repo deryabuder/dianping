@@ -1,6 +1,6 @@
 import React from 'react'
 import Star from '../../../components/Star/Star'
-import './OrderItemComponent'
+import './OrderItemComponent.css'
 class OrderItemComponent extends React.Component {
   constructor (props) {
     super(props)
@@ -48,22 +48,24 @@ class OrderItemComponent extends React.Component {
   render() {
     const item = this.props.data
     return (
-      <li key={item.id} className='clearfix'>
-        <div className='order-item-left fl'><img src={item.img} alt='order item'/></div>
-        <div className='order-item-right fr'>
-          <div>商户：{item.title}</div>
-          <div>数量：{item.count}</div>
-          <div>价格：{item.price}</div>
-        </div>
+      <li className='order-item'>
         {
           // 未评价
-          item.commentState === 0 ?
+          this.state.commentState === 0 ?
           <button className='btn comment' onClick={this.showComment.bind(this)}>评价</button> :
           // 正在评价
-          item.commentState === 1 ? '': 
+          this.state.commentState === 1 ? '': 
           // 已评价
           <button className='btn commented'>已评价</button>
         }
+        <div className='clearfix order-item-info'>
+          <div className='order-item-left fl'><img src={item.img} alt='order item'/></div>
+          <div className='order-item-right fr'>
+            <div>商户：{item.title}</div>
+            <div>数量：{item.count}</div>
+            <div>价格：{item.price}</div>
+          </div>
+        </div>
         {
           this.state.commentState === 1 ?
           <div className='order-list-text'>
@@ -71,8 +73,10 @@ class OrderItemComponent extends React.Component {
             <div className='star-wrapper'>
               <Star star='0' clickCallback={this.starClickCallback.bind(this)}></Star>
             </div>
-            <button onClick={this.submitComment.bind(this)}>提交</button>
-            <button onClick={this.hideComment.bind(this)}>取消</button>
+            <div className='btn-wrapper'>
+              <button onClick={this.submitComment.bind(this)} className='btn'>提交</button>
+              <button onClick={this.hideComment.bind(this)} className='btn cancel'>取消</button>
+            </div>
           </div> 
           : ''
         }

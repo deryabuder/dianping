@@ -1,49 +1,42 @@
 import React from 'react'
-import './Detail.css'
 import Header from '../../components/Header/Header'
-import CommendList from '../../components/CommendList/CommendList'
 import DetailInfo from '../../components//DetailInfo/DetailInfo'
-import LikeItem from '../../components/LikeList/subs/LikeItem'
-import {detailInfo, detailComment,likeList} from '../../common/js/apiInterface'
+import DetailDes from '../../components/DetailDes/DetailDes'
+import Comment from './subs/Comment'
+import {detailInfo} from '../../common/js/apiInterface'
+import './Detail.css'
+
 class Detail extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      detailInfo: {},
-      detailComment: [],
-      likeArr: []
+    constructor(props) {
+      super(props)
+      this.state = {
+        detailInfo: {},
+        likeArr: [],
+        isMore: false,
+      }
     }
-  }
-  componentDidMount () {
-    detailInfo().then(response => {
-      var res = response.data
-      if (res.status === '200') {
-        this.setState({detailInfo: res.result})
-      }
-    })
-    detailComment().then(response => {
-      var res = response.data
-      if (res.status === '200') {
-        this.setState({detailComment: res.result.data})
-      }
-    })
-    likeList().then(response => {
-      var res = response.data
-      if (res.status === '200') {
-        this.setState({likeArr: res.result.data})
-      }
-    })
-  }
+    componentDidMount() {
+      detailInfo().then(response => {
+        var res = response.data
+        if (res.status === '200') {
+          this.setState({
+            detailInfo: res.result
+          })
+        }
+      })
+    }
+
   render() {
     return (
       <div className='detail'>
         <Header title='商户详情'></Header>
         <DetailInfo detailInfo={this.state.detailInfo}></DetailInfo>
-        <CommendList detailComment={this.state.detailComment} detailInfo={this.state.detailInfo}></CommendList>
-        <div className='like-list-title'><h3 className='title-content'>小伙伴们还喜欢</h3></div>
-        <LikeItem likeList={this.state.likeArr}></LikeItem>
+        <DetailDes detailInfo={this.state.detailInfo}></DetailDes>
+        <Comment></Comment>
+        {/* <BuyAndStore isStore={this.state.isStore} buyHandle={this.buyHandle.bind(this)} storeHandle={this.storeHandle.bind(this)}/> */}
       </div>
     )
   }
 }
+
 export default Detail

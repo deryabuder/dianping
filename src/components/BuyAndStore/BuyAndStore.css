@@ -1,0 +1,25 @@
+.buy-store-container {
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+  text-align: center;
+  margin: 0 auto;
+  background: #fff;
+  margin-bottom: 20px;
+}
+.buy-container, .store-container {
+  width: 50%;
+  text-align: center;
+}
+.buy-store-container .btn{
+  color: #000;
+  background: #eee;
+  height: 40px;
+  line-height: 40px;
+  width: 100px;
+  border: 1px solid #000;
+}
+.buy-store-container .selected {
+  background: rgb(242, 56, 77);
+  color: #fff;
+  border: 0;
+}

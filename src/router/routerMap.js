@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter,Route,Switch} from 'react-router-dom'
+import {Router,Route,Switch} from 'react-router-dom'
 import createHistory from 'history/createBrowserHistory'
 import Home from '../containers/Home/Home'
 import City from '../containers/City/City'
@@ -15,7 +15,7 @@ class RouterMap extends React.Component {
   }
   render () {
     return (
-      <BrowserRouter history={history} onUpdate={this.updateHandle.bind(this)}>
+      <Router history={history} onUpdate={this.updateHandle.bind(this)}>
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route path='/city' component={City}/>
@@ -25,7 +25,7 @@ class RouterMap extends React.Component {
           <Route path='/detail' component={Detail}/>
           <Route path='*' component={NotFound}/>
         </Switch>
-      </BrowserRouter>
+      </Router>
     )}
 }
 

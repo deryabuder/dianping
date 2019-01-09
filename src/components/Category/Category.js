@@ -9,21 +9,15 @@ class Category extends React.Component {
       index: 0
     }
   }
-  render () {
-    const opt = {
-      auto: 500,
-      callback: function(index) {
-        // 更新当前轮播图的index
-        this.setState({index: index});
-    }.bind(this)
-  }
+  render() {
+    let reactSwipeEl
     return (
       <div className='category-wrapper'>
         <div className='category'>
-          <ReactSwipe
-            swipeOptions={opt}
-          >
-            <div>
+          <ReactSwipe className="carousel"
+          swipeOptions={{ continuous: true }}
+          ref={el => (reactSwipeEl = el)}>
+            <div className="carousel-item">
               <ul className="category-list clearfix">
                 <Link to='/search/jindian'>
                   <li className='category-item fl'>
@@ -87,7 +81,7 @@ class Category extends React.Component {
                 </Link>
               </ul>
             </div>
-            <div>
+            <div className="carousel-item">
               <ul className="category-list clearfix">
                 <Link to='/search/jindian'>
                   <li className='category-item fl'>
@@ -151,7 +145,7 @@ class Category extends React.Component {
                 </Link>
               </ul>
             </div>
-            <div>
+            <div className="carousel-item">
               <ul className="category-list clearfix">
                 <Link to='/search/jindian'>
                   <li className='category-item fl'>
@@ -216,15 +210,17 @@ class Category extends React.Component {
               </ul>
             </div>
           </ReactSwipe>
-          <div className='index-container'>
+          <button onClick={() => reactSwipeEl.next()}><i className='icon-circle-left'></i></button>
+          <button onClick={() => reactSwipeEl.prev()}><i className='icon-circle-right'></i></button>
+          {/* <div className='index-container'>
             <ul>
               <li className={this.state.index === 0 ? 'selected' : ''}></li>
               <li className={this.state.index === 1 ? 'selected' : ''}></li>
               <li className={this.state.index === 2 ? 'selected' : ''}></li>
             </ul>
-          </div>
+          </div> */}
         </div>
-      </div>
+       </div>
     )
   }
 }

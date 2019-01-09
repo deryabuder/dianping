@@ -16,5 +16,8 @@
   margin: 5px 0;
   height: 30px;
   line-height: 30px;
-  margin-right: 50px;
+}
+.icon-search {
+  color: #999;
+  padding-left: 10px;
 }
