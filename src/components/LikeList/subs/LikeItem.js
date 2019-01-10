@@ -4,7 +4,7 @@ import './LikeItem.css'
 class LikeItem extends React.Component {
   render() {
       return (<li className='like-item'>
-        <Link to='/detail' className='like-item-link clearfix'>
+        <Link to={'/detail/' + this.props.item.id} className='like-item-link clearfix'>
           <div className='like-item-left fl'><img className='like-item-img' src={this.props.item.img} alt='like item'/></div>
           <div className='like-item-right'>
             <div className='like-item-title clearfix'>

@@ -25,7 +25,6 @@ class Comment extends React.Component {
           detailComment: res.result.data
         })
       }
-      console.log(this.state)
     })
   }
   loadMoreData () {
